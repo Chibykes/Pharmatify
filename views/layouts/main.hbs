@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/free-font-awesome.css">
+    <link rel="stylesheet" href="/css/toastify.css">
+    {{#if filepond}}    
+        <link href="/css/filepond.css" rel="stylesheet">
+        <link href="/css/filepond-plugin-image-preview.css" rel="stylesheet">
+    {{/if}}
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body class="{{bodyClass}}">
+    
+    {{{body}}}
+
+
+<script src="/js/toastify.js"></script>
+{{#if successToast}}
+    <script>
+        Toastify({
+            text: '{{successToast}}',
+            duration: 3000,
+            newWindow: true,
+            close: true,
+            gravity: "top", // `top` or `bottom`
+            position: "left", // `left`, `center` or `right`
+            backgroundColor: "linear-gradient(to right, #00b09b, #43dcb9)",
+            borderRadius: "5px",
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            onClick: function(){} // Callback after click
+        }).showToast();
+    </script>
+{{/if}}
+
+{{#if errorToast}}
+    <script>
+        Toastify({
+            text: '{{errorToast}}',
+            duration: 3000,
+            newWindow: true,
+            close: true,
+            gravity: "top", // `top` or `bottom`
+            position: "left", // `left`, `center` or `right`
+            backgroundColor: "linear-gradient(to right, #b00031, #dc4351)",
+            borderRadius: "5px",
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            onClick: function(){} // Callback after click
+        }).showToast();
+    </script>
+{{/if}}
+</body>
+</html>

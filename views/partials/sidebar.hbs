@@ -1,0 +1,43 @@
+<div class="nav d-md-block d-none col-lg-4">
+    <div class="col-9 mx-auto position-sticky top-0">
+        
+        <div class="logo d-flex flex-column justify-content-center py-3">
+            {{#if logo2}}
+                <img class="min mb-2" style="width: 30px!important;" src="/img/bell.svg" alt="">
+                <h2 class="text-center mb-0 fs-5">Pharma<span>tify</span></h2>
+            {{else}}
+                <img class="min mb-2" style="width: 30px!important;" src="/img/bell-white.svg" alt="">
+                <h2 class="text-center mb-0 fs-5" style="color: #fff!important;">Pharma<span>tify</span></h2>
+            {{/if}}
+        </div>
+
+        <div class="sidebar shadow-lg">
+            <ul class="pt-5 bg-white">
+                <li>
+                    <a class="{{#is title '==' 'Dashboard'}}active{{/is}}" href="/admin/dashboard">
+                        <i class="fas fa-stream"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                {{!-- <li>
+                    <a class="{{#is title '==' 'Pharmacies'}}active{{/is}}" href="/admin/pharmacies">
+                        <i class="fas fa-first-aid"></i>
+                        <span>Pharmacies</span>
+                    </a>
+                </li> --}}
+                <li>
+                    <a class="{{#is title '==' 'Drugs'}}active{{/is}}" href="/admin/alerts">
+                        <i class="fas fa-box"></i>
+                        <span>Alerts</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="{{#is title '==' 'Reports'}}active{{/is}}" href="/admin/reports">
+                        <i class="fas fa-thermometer-quarter"></i>
+                        <span>Reports</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

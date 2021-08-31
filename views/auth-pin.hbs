@@ -1,0 +1,46 @@
+<main class="">
+    
+    {{!-- <button class="" onclick="">
+        <i class="fa fa-arrow-left" aria-hidden="true"></i>
+    </button> --}}
+
+    <div 
+        class="col-lg-4 col-12 p-4 py-5 mx-auto"
+    >
+
+        <img class="d-block mx-auto" style="height: auto; width: 120px" src="/img/logo2.svg" alt="">
+
+
+        <div class="col-lg-12 p-3 my-4 rounded-3">
+            <img class="d-block mx-auto overflow-hidden rounded-2 shadow-lg" style="height: auto; width: 100%" src="/img/drugs/{{drug.image}}" alt="">
+            <h2 class="text-center pt-4 fw-bold" style="color: var(--main-col);">{{drug.name}}</h2>
+            {{!-- <small class="d-block text-center pt-3" style="color: var(--main-col); font-size: 11px;">Drug Sample Picture</small> --}}
+        </div>
+        <div class="col-lg-12 shadow-lg p-3 my-4 rounded-3">
+            <small style="color: var(--main-col); font-size: 11px;">Producing Pharmacy</small>
+            <p class="m-0 fw-bold">{{drug.pharmacy}}</p>
+        </div>
+        <div class="col-lg-12 shadow-lg p-3 my-4 rounded-3">
+            <small style="color: var(--main-col); font-size: 11px;">Batch Number</small>
+            <p class="m-0 fw-bold">{{drug.batchNo}}</p>
+        </div>
+        <div class="col-lg-12 shadow-lg p-3 my-4 rounded-3">
+            <small style="color: var(--main-col); font-size: 11px;">NAFDAC Number</small>
+            <p class="m-0 fw-bold">{{drug.nafdacNo}}</p>
+        </div>
+        <div class="col-lg-12 shadow-lg p-3 my-4 rounded-3">
+            <small style="color: var(--main-col); font-size: 11px;">Production Date</small>
+            <p class="m-0 fw-bold">{{drug.productionDate}}</p>
+        </div>
+        <div class="col-lg-12 shadow-lg p-3 my-4 rounded-3">
+            <small style="color: var(--main-col); font-size: 11px;">Expiry Date</small>
+            <p class="m-0 fw-bold">{{drug.expiryDate}}</p>
+        </div>
+    </div>
+
+    <footer class="text-center" style="color: #aaa;">
+        <p>
+            <strong>&copy; 2021 iDrug</strong>
+        </p>
+    </footer>
+</main>

@@ -1,0 +1,162 @@
+<main class="position-relative no-before">
+    <div class="wrapper row col-lg-10 mx-auto pt-4 position-relative">
+        
+        {{> sidebar}}
+
+        <div class="main-page col-lg-7 mx-auto">
+
+            <div class="header d-flex align-items-center justify-content-between">
+                <button class="p-2">
+                    <i class="fa fa-align-left" aria-hidden="true"></i>
+                </button>
+                
+                <form class="searchbar d-flex w-100 mx-4 px-2 rounded-1" action="">
+                    <input 
+                        type="text"
+                        placeholder="Search"
+                        class="w-100"
+                    >
+                    <button class="p-2">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                    </button>
+                </form>
+
+                <i class="fa fa-bell" aria-hidden="true"></i>
+                <div class="px-3">
+                    <div class="acct-img rounded-circle shadow-lg" style="width: 40px; height: 40px; overflow: hidden;">
+                        <img src="/img/footer-advertising@2x.jpg" style="width: 100%; height: 100%;" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="content py-5">
+
+                <form class="add-drugs col-lg-10 mx-auto shadow-lg rounded-2 overflow-hidden" method="POST" action="/admin/alerts/edit/{{drug.drugID}}">
+                    <h4 
+                        class="p-3 text-center text-uppercase fw-bold mb-3 d-flex justify-content-between" 
+                        style="color: #fff; background: var(--main-col);">
+                        <div>
+                            {{!-- <i class="fa fa-thermometer-3 pe-3" aria-hidden="true"></i> --}}
+                            {{drug.name}}
+                        </div>
+
+                        <a style="color: #fff!important" href="/admin/alerts/delete/{{drug.drugID}}" title="Delete This Drug">
+                            <i class="fa fa-trash col-white" aria-hidden="true"></i>
+                        </a>
+                    </h4>
+
+                    <div class="p-lg-5 p-3 pt-4">
+
+
+                        <div class="image-upload col-lg-12 p-0" style="position: relative;">
+                            {{!-- <label class="pb-1" for="poster">Sample Drug Picture (max: 500kb)</label> --}}
+                            {{!-- <input
+                                class="filepond d-block p-2 black" 
+                                type="file" 
+                                name="image"
+                                data-allow-reorder="true"
+                                data-max-file-size="500KB"
+                                data-max-files="1"
+                                value=""
+                            > --}}
+
+                            <img class="d-block mx-auto rounded-2 mb-4" src="/img/drugs/{{drug.image}}" style="max-height: 200px; width: auto;" alt="" srcset="">
+                        </div>
+
+                        <div class="py-4">
+                            <small class="d-block text-center">Auth. PIN</small>
+                            <h2 class="text-center d-flex align-items-center justify-content-center" style="color: var(--main-col)">
+                                <span id="authPin">
+                                    {{spliter drug.authPin '5' '-'}}
+                                </span>
+                                {{!-- <i class="fa fa-copy ms-4 fs-5" aria-hidden="true"></i> --}}
+                            </h2>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <input required type="text" name="name" class="form-control" id="floatingInput" value="{{drug.name}}">
+                            <label for="floatingInput">Drug Name</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input required type="text" name="pharmacy" class="form-control" id="floatingInput" value="{{drug.pharmacy}}">
+                            <label for="floatingInput">Producing Pharmacy</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input required type="text" name="batchNo" class="form-control" id="floatingInput" value="{{drug.batchNo}}">
+                            <label for="floatingInput">Batch Number</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input required type="text" name="nafdacNo" class="form-control" id="floatingInput" value="{{drug.nafdacNo}}">
+                            <label for="floatingInput">NAFDAC No.</label>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6 pe-lg-1">
+                                <div class="form-floating mb-3">
+                                    <input required type="date" name="productionDate" class="form-control" id="floatingInput" value="{{drug.productionDate}}">
+                                    <label for="floatingInput">Production Date</label>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 ps-lg-1">
+                                <div class="form-floating mb-3">
+                                    <input required type="date" name="expiryDate" class="form-control" id="floatingInput" value="{{drug.expiryDate}}">
+                                    <label for="floatingInput">Expiry Date</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 mx-auto">
+                            <button class="rounded-1 w-100">
+                                Submit
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+                {{!-- <div class="table shadow-lg mb-5"> 
+                    <h5>Drugs</h5>
+                    <table class="activity">
+                        <thead>
+                            <tr>
+                                <th>S/N</th>
+                                <th>Drug</th>
+                                <th>Pharmacy</th>
+                                <th>Auth. PIN</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each drugs}}
+                                <tr>
+                                    <td><span class="sn"></span></td>
+                                    <td>
+                                        <a href="/admin/alerts/{{this.drugID}}" style="color: var(--main-col);">
+                                            {{this.name}}
+                                        </a>
+                                    </td>
+                                    <td>{{this.pharmacy}}</td>
+                                    <td>{{spliter this.authPin '5' '-'}}</td>
+                                </tr>
+                            {{/each}}
+                            <tr>
+                                <td></td>
+                                <td colspan="2"></td>
+                                <td colspan="2"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div> --}}
+
+            </div>
+
+            
+            <footer class="text-center" style="color: #aaa;">
+                <p>
+                    <strong>&copy; 2021 Pharmatify</strong>
+                </p>
+            </footer>
+            
+        </div>
+
+    </div>
+
+    
+</main>
