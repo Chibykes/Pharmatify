@@ -27,9 +27,13 @@ const sendMsg = (msg) => {
 }
 
 const cronjob = (drugID, expiryDate, name) => {
-    let day = new Date(expiryDate).getDate();
-    let month = parseInt(new Date(expiryDate).getMonth()) + 1;
-    let year = new Date(expiryDate).getFullYear();
+    let d = new Date(expiryDate).getTime();
+    
+    let today = new Date(expiryDate);
+    let _7days = new Date(d - 604800000);
+    let _30days = new Date(d - 2592000000);
+    let _90days = new Date(d - 7776000000);
+    let year = new Date(d).getFullYear();
 
     let msg;
     let timeLeft;
@@ -47,27 +51,27 @@ const cronjob = (drugID, expiryDate, name) => {
 
     global[drugID] = [];
     
-    global[drugID][0] = cron.schedule(`00 00 12 ${day} ${month - 3} *`, ()=>{
+    global[drugID][0] = cron.schedule(`00 00 12 ${_90days.getDate()} ${_90days.getMonth() + 1} *`, ()=>{
         if(new Date().getFullYear() === year){
-            msg = `Expiry Alert!!!\n\nDrugID: ${drugID}\nDrug: ${name}\n\nThis drug will expire in 3 MONTHS`;
-            timeLeft = '3 months';
+            msg = `Expiry Alert!!!\n\nDrugID: ${drugID}\nDrug: ${name}\n\nThis drug will expire in 90 Days`;
+            timeLeft = '90 Days';
             sendMsg(msg);
             alertDB();
             global[drugID][0].destroy();
         }
     });
     
-    global[drugID][1] = cron.schedule(`00 00 12 ${day} ${month - 1} *`, ()=>{
+    global[drugID][1] = cron.schedule(`00 00 12 ${_30days.getDate()} ${_30days.getMonth() + 1} *`, ()=>{
         if(new Date().getFullYear() === year){
-            msg = `Expiry Alert!!!\n\nDrugID: ${drugID}\nDrug: ${name}\n\nThis drug will expire in 1 MONTH`;
-            timeLeft = '1 month';
+            msg = `Expiry Alert!!!\n\nDrugID: ${drugID}\nDrug: ${name}\n\nThis drug will expire in 30 Days`;
+            timeLeft = '30 Days';
             sendMsg(msg);
             alertDB();
             global[drugID][1].destroy();
         }
     });
     
-    global[drugID][2] = cron.schedule(`00 00 12 ${day - 7} ${month} *`, ()=>{
+    global[drugID][2] = cron.schedule(`00 00 12 ${_7days.getDate()} ${_7days.getMonth() + 1} *`, ()=>{
         if(new Date().getFullYear() === year){
             msg = `Expiry Alert!!!\n\nDrugID: ${drugID}\nDrug: ${name}\n\nThis drug will expire in 7 DAYS`;
             timeLeft = '7 days';
@@ -77,10 +81,10 @@ const cronjob = (drugID, expiryDate, name) => {
         }
     });
     
-    global[drugID][3] = cron.schedule(`00 00 12 ${day} ${month} *`, ()=>{
+    global[drugID][3] = cron.schedule(`00 00 12 ${today.getDate()} ${today.getMonth() + 1} *`, ()=>{
         if(new Date().getFullYear() === year){
             msg = `Expiry Alert!!!\n\nDrugID: ${drugID}\nDrug: ${name}\n\nThis drug expires TODAY`;
-            timeLeft = '0 days';
+            timeLeft = 'Today';
             sendMsg(msg);
             alertDB();
             global[drugID][3].destroy();
@@ -94,13 +98,13 @@ const cronjob = (drugID, expiryDate, name) => {
 }
 
 app.get('/', (req, res)=>{
-//     const salt = bcrypt.genSaltSync(10);
-//     const hash = bcrypt.hashSync('pharmatify2021', salt);
+    // const salt = bcrypt.genSaltSync(10);
+    // const hash = bcrypt.hashSync('pharmatify2021', salt);
 
-//     Admins.create({
-//         adminID: 'admin',
-//         password: hash
-//     })
+    // Admins.create({
+    //     adminID: 'admin',
+    //     password: hash
+    // })
     
     // console.log(req.flash('successToast'));
     res.render('admin/login', {
