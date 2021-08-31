@@ -4,10 +4,6 @@ const Drugs = require('../models/Drugs');
 
 app.get('/', (req, res)=>{
     res.redirect('/admin');
-    res.render('index', {
-        title: 'iDrug Authentication',
-        errorToast: req.flash('errorToast')
-    })
 });
 
 app.post('/auth-pin', async(req, res)=>{
