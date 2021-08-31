@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/free-font-awesome.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    
+
+    <main class="position-relative w-before">
+        <div class="wrapper row col-lg-10 mx-auto pt-4 position-relative">
+            <div class="nav d-md-block d-none col-lg-4">
+                <div class="col-9 mx-auto position-sticky top-0">
+                    <img
+                        class="d-block mx-auto pb-4" 
+                        src="/img/logo3.svg" 
+                        alt=""
+                        style="transform: scale(.8);"
+                    >
+    
+                    <div class="sidebar shadow-lg">
+                        <ul class="pt-5 bg-white">
+                            <li>
+                                <a class="active" href="/dashboard">
+                                    <i class="fas fa-stream"></i>
+                                    <span>Dashboard</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/dashboard">
+                                    <i class="fas fa-first-aid"></i>
+                                    <span>Pharmacies</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/dashboard">
+                                    <i class="fas fa-box"></i>
+                                    <span>Drugs</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/dashboard">
+                                    <i class="fas fa-thermometer-quarter"></i>
+                                    <span>Reports</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-page col-lg-7 mx-auto">
+
+                <div class="header d-flex align-items-center justify-content-between">
+                    <button class="p-2">
+                        <i class="fa fa-align-left" aria-hidden="true"></i>
+                    </button>
+                    
+                    <form class="searchbar d-flex w-100 mx-4 px-2 rounded-1" action="">
+                        <input 
+                            type="text"
+                            placeholder="Search"
+                            class="w-100"
+                        >
+                        <button class="p-2">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </button>
+                    </form>
+
+                    <i class="fa fa-bell text-white" aria-hidden="true"></i>
+                    <div class="px-3">
+                        <div class="acct-img rounded-circle" style="width: 40px; height: 40px; overflow: hidden;">
+                            <img src="/img/footer-advertising@2x.jpg" style="width: 100%; height: 100%;" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content py-5">
+                    <div class="row px-0">
+                        <div class="pe-lg-3 py-3 col-lg-6">
+                            <div class="box bg-red shadow-lg">
+                                <h2>200</h2>
+                                <span>Pharmacies</span>
+                                <i class="fa fa-first-aid" aria-hidden="true"></i>
+                            </div>
+                        </div>
+
+                        <div class="ps-lg-3 py-3 col-lg-6">
+                            <div class="box bg-blue shadow-lg">
+                                <h2>2</h2>
+                                <span>Drugs</span>
+                                <i class="fa fa-thermometer-4" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="flex">
+                        <div class="rounded-1 bg-white shadow-lg py-5  my-5 ">
+                            <canvas class="mx-auto" id="myChartPie" width="250" height="250"></canvas>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="table shadow-lg"> 
+                        <h5>Pharmacies</h5>
+                        <table class="activity">
+                            <thead>
+                                <tr>
+                                    <th>S/N</th>
+                                    <th>Pharmacy</th>
+                                    <th>Drugs</th>
+                                    <th>Reg. Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="sn"></span></td>
+                                    <td>Chicken</td>
+                                    <td>Sale</td>
+                                    <td>25</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="sn"></span></td>
+                                    <td>Eggs</td>
+                                    <td>Sale</td>
+                                    <td>10</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="sn"></span></td>
+                                    <td>Feeds</td>
+                                    <td>Bought</td>
+                                    <td>10</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="sn"></span></td>
+                                    <td>Medicals</td>
+                                    <td>Treatment</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td colspan="2">Total</td>
+                                    <td colspan="2">30,000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                    <div class="table shadow-lg mt-5"> 
+                        <h5>Drugs</h5>
+                        <table class="activity">
+                            <thead>
+                                <tr>
+                                    <th>S/N</th>
+                                    <th>Pharmacy</th>
+                                    <th>Drugs</th>
+                                    <th>Reg. Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="sn"></span></td>
+                                    <td>Chicken</td>
+                                    <td>Sale</td>
+                                    <td>25</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="sn"></span></td>
+                                    <td>Eggs</td>
+                                    <td>Sale</td>
+                                    <td>10</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="sn"></span></td>
+                                    <td>Feeds</td>
+                                    <td>Bought</td>
+                                    <td>10</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="sn"></span></td>
+                                    <td>Medicals</td>
+                                    <td>Treatment</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td colspan="2">Total</td>
+                                    <td colspan="2">30,000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                
+                <footer class="text-center" style="color: #aaa;">
+                    <p>
+                        <strong>&copy; 2021 iDrug</strong>
+                    </p>
+                </footer>
+                
+            </div>
+
+        </div>
+
+        
+    </main>
+
+
+
+
+
+    <script src="/js/chart.min.js"></script>
+    <script>
+        var ctx_pie = document.getElementById('myChartPie');
+        var myChartPie = new Chart(ctx_pie, {
+            type: 'pie',
+            data: {
+                labels: [
+                    'Pharmacy',
+                    'Drugs'
+                ],
+                datasets: [{
+                    label: 'My First Dataset',
+                    data: [10, 90],
+                    backgroundColor: [
+                    '#1182BC44',
+                    '#1182BC',
+                    ],
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                responsive: false,
+                scales: {
+                }
+            }
+        });
+    </script>
+</body>
+</html>

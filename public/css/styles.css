@@ -1,0 +1,353 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --main-col: #2EDF9E;
+    font-family: 'Apercu';
+    font-weight: 500;
+}
+
+main{
+    position: relative;
+    z-index: 1;
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+a:hover{
+    color: unset;
+}
+
+.bg-main-col{
+    background: var(--main-col);
+}
+
+
+
+main.phone-view{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+input,button{
+    display: block;
+    /* width: 100%; */
+}
+
+.form-box input, .form-box button{
+    width: 100%;
+}
+
+form div.form-box{
+    margin: 15px auto;
+}
+
+form input,form button{
+    padding: 12px 20px;
+    border: 1px solid #000;
+    border-radius: 50px;
+}
+
+form button{
+    padding: 10px 20px;
+    background: #000;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#blob1{
+    position: fixed;
+    left: -45%;
+    bottom: -30%;
+    transform: scale(.8);
+}
+
+#blob2{
+    position: fixed;
+    right: -35%;
+    top: -30%;
+    transform: scale(.8);
+}
+
+
+.modal{
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    height: 80%;
+    transform: translate(-50%, -50%);
+}
+
+div.logo h2{
+    margin: none;
+    font-family: 'League Spartan';
+    color: var(--main-col);
+}
+
+div.logo h2 span{
+    font: inherit;
+    color: #000;
+}
+
+div.logo img.min{
+    display: block;
+    margin: auto;
+    width: 40px;
+    height: auto;
+}
+
+
+
+/* ADMIN LOGIN */
+
+body.admin-login{
+    background: url('/img/footer-advertising@2x.jpg');
+    background-size: cover;
+    background-position-y: -160px;
+}
+
+body.admin-login::before{
+    position: fixed;
+    display: block;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: #054829c7;
+}
+
+.admin-login main{
+    height: 100vh;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+
+form.login-box{
+    background: #fff;
+    border-radius: 5px;
+}
+
+.admin-login form.login-box input,
+.admin-login form.login-box button{
+    border-radius: 5px;
+}
+
+.admin-login h1{
+    font-size: 2.7rem;
+    font-family: 'League Spartan';
+}
+
+
+
+
+
+
+
+main.w-before::before{
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: block;
+    content: "";
+    background: var(--main-col);
+    width: 100%;
+    height: 200px;
+    z-index: -1;
+}
+
+.no-before::before{
+    all: unset;
+}
+
+.sidebar {
+    border-radius: 5px;
+}
+
+.sidebar ul{
+    list-style: none;
+    padding: 0;
+    height: 80vh;
+    border-radius: 5px;
+}
+
+
+.sidebar ul li > a{
+    display: block;
+    padding: 15px 20px;
+    margin: 5px auto;
+    /* border-radius: 5px; */
+    color: #888;
+    font-size: 14px;
+}
+
+.sidebar ul li > a.active{
+    background: var(--main-col);
+    color: #fff;
+}
+
+.sidebar ul li > a > i{
+    display: inline-block;
+    width: 30px;
+    list-style: none;
+}
+
+.header .searchbar{
+    background: #ffffff31;
+}
+
+.main-page .header input{
+    padding: 7px 10px;
+    width: auto;
+    border: 0;
+    background: none;
+    color: #000;
+    outline: none;
+}
+
+.elip{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.main-page .header input::placeholder{
+    color: #00000044;
+}
+
+.main-page .header button{
+    display: inline!important;
+    width: auto;
+    border: 0;
+    background: none;
+    color: #fff;
+}
+
+.header .acct-img{
+    border: 3px solid #fff;
+}
+
+/* .container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 25px;
+} */
+
+
+.box{
+    position: relative;
+    padding: 20px;
+    background: #fff;
+    color: var(--main-col);
+    border-radius: 5px;
+    /* width: 300px;  */
+    z-index: -1;
+}
+
+.box h2{
+    font-size: 4rem;
+    margin: 0;
+}
+
+.box span{
+    font-size: 14px;
+    color: #aaa;
+}
+
+.box i.fa,
+.box i.fab{
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    font-size: 70px;
+    opacity: 0.2;
+}
+
+
+.table{
+    /* border: 1px solid #000; */
+    background: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    font-size: calc(1rem * .9);
+}
+
+.table h5{
+    background: var(--main-col);
+    color: #fff;
+    margin: 0;
+    padding: .8rem .5rem;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th{
+    font-weight: bold;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+th i.fa{
+    font-size: 10px;
+    color: #555;
+    margin-left: 10px;
+}
+
+td,th{
+    /* border: 1px solid #000; */
+    padding: .8rem .5rem;
+}
+
+tr{
+    border-bottom: 1px solid #eee;
+}
+
+tbody tr:hover{
+    background: #eee;
+}
+
+tbody{
+    counter-reset: counter;
+}
+
+tbody span.sn::after{
+    counter-increment: counter;
+    content: counter(counter);
+    padding-left: 5px;
+}
+
+td[colspan]{
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.no-before .header i{
+    color: #000;
+}
+
+.no-before .header form.searchbar{
+    background: #2edf9e3f;
+}
+
+.addBtn, .addBtn:hover{
+    color: #fff;
+    border: 2px solid #fff;
+    font-size: small;
+    font-weight: bold;
+    background: none;
+}
+
+a[class="filepond--credits"]{
+    visibility: hidden;
+}
