@@ -94,13 +94,13 @@ const cronjob = (drugID, expiryDate, name) => {
 }
 
 app.get('/', (req, res)=>{
-    const salt = bcrypt.genSaltSync(10);
-    const hash = bcrypt.hashSync('pharmatify2021', salt);
+//     const salt = bcrypt.genSaltSync(10);
+//     const hash = bcrypt.hashSync('pharmatify2021', salt);
 
-    Admins.create({
-        adminID: 'admin',
-        password: hash
-    })
+//     Admins.create({
+//         adminID: 'admin',
+//         password: hash
+//     })
     
     // console.log(req.flash('successToast'));
     res.render('admin/login', {
